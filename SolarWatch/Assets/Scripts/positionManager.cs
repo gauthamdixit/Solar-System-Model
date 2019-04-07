@@ -9,13 +9,13 @@ public class positionManager : MonoBehaviour
     JDNConverter JDNConv;
     public GameObject sphere;
     public GameObject Sun;
-    public int distanceFactor;
+    public float distanceFactor;
 
     // Start is called before the first frame update
     void Start()
     {
         JDNConv = new JDNConverter();
-        distanceFactor = 200;
+        distanceFactor = 1496;
         CreateSun();
     }
     public void CreateSun()
