@@ -24,13 +24,13 @@ public class positionManager : MonoBehaviour
     void Start()
     {
         JDNConv = new JDNConverter();
-        distanceFactor = 1496;
+        distanceFactor = 149.6f;
         CreateSun();
     }
     public void CreateSun()
     {
         Sun = Instantiate(Sun, Vector3.zero, new Quaternion(0,0,0,0));
-        Sun.transform.localScale = Vector3.one * 13.91f;
+        Sun.transform.localScale = Vector3.one * 1.391f;
 
         Sun.name = "Sun";
     }
@@ -46,7 +46,7 @@ public class positionManager : MonoBehaviour
         float z = Mathf.Sin((float)AASMercury.EclipticLongitude(JDNConv.getJulianDayNumberToday(), true));
         Vector3 forward = new Vector3(x, y, z) * getDistMercury();
         Mercury = Instantiate(sphere, forward, Sun.transform.rotation);
-        Mercury.transform.localScale = Vector3.one * 0.048794f;
+        Mercury.transform.localScale = Vector3.one * .0048794f;
         Mercury.name = "Mercury";
         
     }
@@ -62,7 +62,7 @@ public class positionManager : MonoBehaviour
         float z = Mathf.Sin((float)AASVenus.EclipticLongitude(JDNConv.getJulianDayNumberToday(), true));
         Vector3 forward = new Vector3(x, y, z) * getDistVenus();
         Venus = Instantiate(sphere, forward, Sun.transform.rotation);
-        Venus.transform.localScale = Vector3.one * 0.12104f;
+        Venus.transform.localScale = Vector3.one * .012104f;
         Venus.name = "Venus";
     }
     public float getDistEarth()
@@ -77,7 +77,7 @@ public class positionManager : MonoBehaviour
         float z = Mathf.Sin((float)AASEarth.EclipticLongitude(JDNConv.getJulianDayNumberToday(), true));
         Vector3 forward = new Vector3(x, y, z) * getDistEarth();
         Earth = Instantiate(sphere, forward, Sun.transform.rotation);
-        Earth.transform.localScale = Vector3.one * 0.12742f;
+        Earth.transform.localScale = Vector3.one * .012742f;
         Earth.name = "Earth";
     }
     public float getDistMars()
@@ -92,7 +92,7 @@ public class positionManager : MonoBehaviour
         float z = Mathf.Sin((float)AASMars.EclipticLongitude(JDNConv.getJulianDayNumberToday(), true));
         Vector3 forward = new Vector3(x, y, z) * getDistMars();
         Mars = Instantiate(sphere, forward, Sun.transform.rotation);
-        Mars.transform.localScale = Vector3.one * 0.06779f;
+        Mars.transform.localScale = Vector3.one * .006779f;
         Mars.name = "Mars";
     }
     public float getDistJupiter()
@@ -107,7 +107,7 @@ public class positionManager : MonoBehaviour
         float z = Mathf.Sin((float)AASJupiter.EclipticLongitude(JDNConv.getJulianDayNumberToday(), true));
         Vector3 forward = new Vector3(x, y, z) * getDistJupiter();
         Jupiter = Instantiate(sphere, forward, Sun.transform.rotation);
-        Jupiter.transform.localScale = Vector3.one * 1.3982f;
+        Jupiter.transform.localScale = Vector3.one * .13982f;
         Jupiter.name = "Jupiter";
     }
     public float getDistSaturn()
@@ -122,7 +122,7 @@ public class positionManager : MonoBehaviour
         float z = Mathf.Sin((float)AASSaturn.EclipticLongitude(JDNConv.getJulianDayNumberToday(), true));
         Vector3 forward = new Vector3(x, y, z) * getDistSaturn();
         Saturn = Instantiate(sphere, forward, Sun.transform.rotation);
-        Saturn.transform.localScale = Vector3.one * 1.1646f;
+        Saturn.transform.localScale = Vector3.one * .11646f;
         Saturn.name = "Saturn";
     }
     public float getDistUranus()
@@ -137,7 +137,7 @@ public class positionManager : MonoBehaviour
         float z = Mathf.Sin((float)AASUranus.EclipticLongitude(JDNConv.getJulianDayNumberToday(), true));
         Vector3 forward = new Vector3(x, y, z) * getDistUranus();
         Uranus = Instantiate(sphere, forward, Sun.transform.rotation);
-        Uranus.transform.localScale = Vector3.one * 0.50724f;
+        Uranus.transform.localScale = Vector3.one * .050724f;
         Uranus.name = "Uranus";
     }
     public float getDistNeptune()
@@ -152,7 +152,7 @@ public class positionManager : MonoBehaviour
         float z = Mathf.Sin((float)AASNeptune.EclipticLongitude(JDNConv.getJulianDayNumberToday(), true));
         Vector3 forward = new Vector3(x, y, z) * getDistNeptune();
         Neptune = Instantiate(sphere, forward, Sun.transform.rotation);
-        Neptune.transform.localScale = Vector3.one * 0.49244f;
+        Neptune.transform.localScale = Vector3.one * .049244f;
         Neptune.name = "Neptune";
     }
     public float getDistPluto()
@@ -167,7 +167,7 @@ public class positionManager : MonoBehaviour
         float z = Mathf.Sin((float)AASPluto.EclipticLongitude(JDNConv.getJulianDayNumberToday()));
         Vector3 forward = new Vector3(x, y, z) * getDistPluto();
         Pluto = Instantiate(sphere, forward, Sun.transform.rotation);
-        Pluto.transform.localScale = Vector3.one * 0.023766f;
+        Pluto.transform.localScale = Vector3.one * .0023766f;
         Pluto.name = "Pluto";
     }
     public void CreatePlanets()
@@ -202,7 +202,7 @@ public class positionManager : MonoBehaviour
             Debug.Log("Earth: "+ AASEarth.RadiusVector(JDNConv.getJulianDayNumberToday(), true));
             Debug.Log("Mercury: " + AASMercury.RadiusVector(JDNConv.getJulianDayNumberToday(), true));
             Debug.Log("Jupiter: " + AASJupiter.RadiusVector(JDNConv.getJulianDayNumberToday(), true));
-            Debug.Log("Distance between sun and earth: " + Vector3.Distance(Sun.transform.position, Earth.transform.position));
+            Debug.Log("Distance between sun and pluto: " + Vector3.Distance(Sun.transform.position, Pluto.transform.position));
 
         }
     }
